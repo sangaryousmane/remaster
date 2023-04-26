@@ -6,6 +6,7 @@ struct Animal {
     char *type;
     double size;
 };
+typedef struct Animal Animal;
 
 struct Animal *lion(char *name, char *type, double size) {
     struct Animal *lion_type;
