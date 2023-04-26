@@ -21,6 +21,17 @@ struct Animal *lion(char *name, char *type, double size) {
     return lion_type;
 }
 
+int access_lion_func(){
+    struct Animal *lion_pointer;
+
+    lion_pointer = lion("Kimba", "Plagiarism Checker", 5.5);
+    if (lion_pointer !=NULL){
+        printf("Name is: %s\n", lion_pointer->name);
+        printf("Type is: %s\n", lion_pointer->type);
+        printf("Strength: %.1lf\n\n", lion_pointer->size);
+    }
+    return 1;
+}
 
 void show() {
     struct Animal dog;
@@ -37,7 +48,7 @@ void show() {
 }
 
 void show_with_pointers() {
-
+    access_lion_func();
     puts("Accessing structs through pointers: ");
     puts("-------------------------------------");
     struct Animal dog;
