@@ -35,14 +35,23 @@ void print_dog(struct dog *d) {
     }
 }
 
+// Task 4
+dog_t *new_dog(char *name, float age, char *owner){
+    dog_t *dog;
+    dog = malloc(sizeof(dog_t));
 
+    if (dog==NULL)
+        return NULL;
+
+    dog->name=name;
+    dog->owner=owner;
+    dog->age=age;
+    return dog;
+}
 int test() {
-    struct dog my_dog;
+    dog_t *my_dog;
 
-    my_dog.name = "Poppy";
-    my_dog.age = 3.5;
-    my_dog.owner = "Bob";
-    print_dog(&my_dog);
-    print_dog(NULL);
+    my_dog = new_dog("Poppy", 3.5, "Bob");
+    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog->name, my_dog->age);
     return 0;
 }
