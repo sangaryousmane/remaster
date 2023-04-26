@@ -3,14 +3,21 @@
 
 #include "dog.h"
 
-// Task 1
+// Task 2
+void init_dog(struct dog *d, char *name, double age, char *owner){
+
+
+    if (d !=NULL){
+        d->name=name;
+        d->age=age;
+        d->owner=owner;
+    }
+}
 
 int test(){
     struct dog my_dog;
 
-    my_dog.name = "Poppy";
-    my_dog.age = 3.5;
-    my_dog.owner = "Bob";
+    init_dog(&my_dog, "Poppy", 3.5, "Bob");
     printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
     return 0;
 }
