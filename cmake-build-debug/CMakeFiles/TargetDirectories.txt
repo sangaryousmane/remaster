@@ -1,0 +1,3 @@
+C:/Users/sanga/Documents/remaster/cmake-build-debug/CMakeFiles/remaster.dir
+C:/Users/sanga/Documents/remaster/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/sanga/Documents/remaster/cmake-build-debug/CMakeFiles/rebuild_cache.dir
