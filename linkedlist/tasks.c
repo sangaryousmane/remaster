@@ -58,6 +58,23 @@ list_t *add_node(list_t **head, const char *str){
         return NULL;
     }
 }
+
+// Task 5
+//
+#include <stdio.h>
+
+void first(void) __attribute__ ((constructor));
+
+/**
+ * first - ...
+ *
+ * Return: Nothing.
+ */
+void first(void)
+{
+    printf("You're beat! and yet, you must allow,\n");
+    printf("I bore my house upon my back!\n");
+}
 int test_me() {
     list_t *head;
 
