@@ -109,7 +109,18 @@ list_t *add_node_end(list_t **head, const char *str){
 }
 
 
+// Task 7
+// Write a function that frees a list_t list.
+void free_list(list_t *head){
+    list_t *t;
 
+    while(head){
+        t = head->next;
+        free(head->str);
+        free(t);
+        head=t;
+    }
+}
 int test_me() {
     list_t *head;
 
