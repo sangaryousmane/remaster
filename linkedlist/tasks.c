@@ -60,21 +60,56 @@ list_t *add_node(list_t **head, const char *str){
 }
 
 // Task 5
-//
-#include <stdio.h>
-
+// Write a function that prints before the main function
 void first(void) __attribute__ ((constructor));
 
 /**
- * first - ...
+ * first - executes before the main function
  *
- * Return: Nothing.
+ * Return: void.
  */
 void first(void)
 {
     printf("You're beat! and yet, you must allow,\n");
     printf("I bore my house upon my back!\n");
 }
+
+// Task 6
+list_t *add_node_end(list_t **head, const char *str){
+    list_t *my_new_list, *temporary = *head;
+    int counter = 0;
+    int i = 0;
+
+    for (; str[i] != '\0'; i++){
+        counter++;
+    }
+
+    my_new_list = malloc(sizeof(list_t));
+
+    if (my_new_list){
+        my_new_list->len=counter;
+        my_new_list->str= strdup(str);
+        my_new_list->next=NULL;
+
+        if (!*head){
+            *head=my_new_list;
+            return (my_new_list);
+        }
+
+        while (temporary->next){
+            temporary = temporary->next;
+        }
+        temporary->next=my_new_list;
+        return my_new_list;
+    }
+    else{
+        return NULL;
+    }
+
+}
+
+
+
 int test_me() {
     list_t *head;
 
