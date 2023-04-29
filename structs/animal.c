@@ -1,21 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Animal {
+// TODO: DAY 14, structures in C.
+// TODO: Implementing OOPs in C
+typedef struct Animal {
     char *name;
     char *type;
-    double size;
-};
-typedef struct Animal Animal;
+    double age;
+} access_animal;
 
-struct Animal *lion(char *name, char *type, double size) {
-    struct Animal *lion_type;
 
-    /* Dynamically allocate space for the new struct */
+access_animal *lion(char *name, char *type, double size) {
+    access_animal *lion_type;
+
+    /* Create and dynamically allocate space for the new struct */
     lion_type = malloc(sizeof(struct Animal));
 
     if (lion_type != NULL) {
-        lion_type->size = size;
+        lion_type->age = size;
         lion_type->type = type;
         lion_type->name = name;
     }
@@ -23,29 +25,32 @@ struct Animal *lion(char *name, char *type, double size) {
 }
 
 int access_lion_func(){
-    struct Animal *lion_pointer;
-
-    lion_pointer = lion("Kimba", "Plagiarism Checker", 5.5);
+    access_animal *lion_pointer;
+    lion_pointer = (access_animal *) lion("Kimba",
+                                          "Plagiarism Checker",
+                                          .5);
     if (lion_pointer !=NULL){
-        printf("Name is: %s\n", lion_pointer->name);
-        printf("Type is: %s\n", lion_pointer->type);
-        printf("Strength: %.1lf\n\n", lion_pointer->size);
+        printf("Name is %s\n", lion_pointer->name);
+        printf("Type is %s\n", lion_pointer->type);
+        printf("KIMBA is %.1lf years old\n", lion_pointer->age);
     }
     return 1;
 }
 
 void show() {
-    struct Animal dog;
+    access_animal dog;
 
-    dog.size = 5.5;
+    dog.age = 5.5;
     dog.name = "Poppy";
     dog.type = "German dog";
 
-    if (dog.size > 4) {
+    if (dog.age > 4) {
         puts("This is a mature dog!");
     }
 
-    printf("Size: %.2lf, Name: %s, Type: %s\n", dog.size, dog.name, dog.type);
+    printf(
+            "Size: %.2lf, Name: %s, Type: %s\n",
+           dog.age, dog.name, dog.type);
 }
 
 void show_with_pointers() {
@@ -61,8 +66,8 @@ void show_with_pointers() {
 
     /* De-Referencing the pointer values */
     (*ptr).name = "Catonie";
-    (*ptr).size = 4.2;
+    (*ptr).age = 4.2;
     (*ptr).type = "Russian pillar";
-    printf("Size: %.2lf, Name: %s, Type: %s ", ptr->size, ptr->name, ptr->type);
+    printf("Size: %.2lf, Name: %s, Type: %s ", ptr->age, ptr->name, ptr->type);
 
 }

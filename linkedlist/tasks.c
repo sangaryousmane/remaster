@@ -3,6 +3,8 @@
 
 /* TASK 1 */
 // Write a function that prints all the elements of a list_t list.
+// Print [0] (nil) if the str element is null
+// Print [length] string
 size_t print_list(const list_t *h) {
     size_t node_count = 0;
 
@@ -12,8 +14,8 @@ size_t print_list(const list_t *h) {
         else
             printf("[%d] %s\n", h->len, h->str);
 
-        h = h->next;
-        node_count++;
+        h = h->next;  // Points to the next node
+        node_count++; // check again if there are still elements left.
     }
     return node_count;
 }
@@ -49,25 +51,26 @@ list_t *add_node(list_t **head, const char *str){
     new_list = malloc(sizeof(list_t));
 
     if(new_list){
-        new_list->str= strdup(str);
-        new_list->len=length;
-        new_list->next=(*head);
-        (*head)=new_list;
-        return new_list;
-    } else{
-        return NULL;
-    }
+        /* the strdup function will duplicate a string and assign it to the existing string */
+       new_list->str= strdup(str);
+       new_list->len=length;
+       new_list->next=(*head);
+       (*head)=new_list;
+       return new_list;
+   } else{
+       return NULL;
+   }
 }
 
 // Task 5
 // Write a function that prints before the main function
-void first(void) __attribute__ ((constructor));
+//void first(void) __attribute__ ((constructor));
 
 /**
- * first - executes before the main function
- *
- * Return: void.
- */
+* first - executes before the main function
+*
+* Return: void.
+*/
 void first(void)
 {
     printf("You're beat! and yet, you must allow,\n");

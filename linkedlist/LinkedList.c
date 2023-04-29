@@ -2,7 +2,9 @@
 #include <stdlib.h>
 
 /**
- * Implementing a singly list
+ * struct Node - Implementing a singly linked list
+ *
+ * Description: takes a data and a pointer to the next node
  */
 struct Node{
     int data; /* The data of the current element */
@@ -32,7 +34,7 @@ void show_linkedList(){
     third = (struct Node*) malloc(sizeof(struct Node));
 
     head->data=1;  /* Store data in the first element */
-    head->next=second; /* points as the second element */
+    head->next=second; /* points at the second element */
 
     second->data=2;
     second->next=third;
