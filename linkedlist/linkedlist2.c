@@ -75,6 +75,22 @@ void free_listint(listint_t *head){
        head=list;
    }
 }
+
+// Task 6
+void free_listint2(listint_t **head){
+    listint_t *t;
+
+    if ((*head) !=NULL) {
+        for (; *head != NULL; t = (*head)->next) {
+            free(*head);
+            *head = t;
+        }
+        head = NULL;
+    } else {
+        return;
+    }
+
+}
 int show_it() {
     listint_t *head;
 
@@ -88,7 +104,7 @@ int show_it() {
     add_nodeint_end(&head, 402);
     add_nodeint_end(&head, 1024);
     print_listint(head);
-    free_listint(head);
-    head = NULL;
+    free_listint2(&head);
+    printf("%p\n", (void *)head);
     return (0);
 }
