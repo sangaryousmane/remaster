@@ -24,25 +24,32 @@ size_t listint_len(const listint_t *h){
     return num_el;
 }
 
+// Task 3
+listint_t *add_nodeint(listint_t **head, const int n){
+    listint_t *new_list;
+
+    new_list= malloc(sizeof(listint_t));
+
+    if (new_list != NULL){
+        new_list->n=n;
+        new_list->next=(*head);
+        (*head)=new_list;
+        return new_list;
+    }
+    return NULL;
+}
 int show_it(){
     listint_t *head;
-    listint_t *new;
-    listint_t hello = {8, NULL};
-    size_t n;
 
-    head = &hello;
-    new = malloc(sizeof(listint_t));
-    if (new == NULL)
-    {
-        printf("Error\n");
-        return (1);
-    }
-    new->n = 9;
-    new->next = head;
-    head = new;
-    n = listint_len(head);
-    printf("-> %lu elements\n", n);
-    free(new);
-    return (0);
+    head = NULL;
+    add_nodeint(&head, 0);
+    add_nodeint(&head, 1);
+    add_nodeint(&head, 2);
+    add_nodeint(&head, 3);
+    add_nodeint(&head, 4);
+    add_nodeint(&head, 98);
+    add_nodeint(&head, 402);
+    add_nodeint(&head, 1024);
+    print_listint(head);
     return 0;
 }
