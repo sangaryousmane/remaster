@@ -66,6 +66,15 @@ listint_t *add_nodeint_end(listint_t **head, const int n) {
 
 }
 
+// Task 5
+void free_listint(listint_t *head){
+    listint_t *list;
+
+   for(; head !=NULL; list=head->next){
+       free(head);
+       head=list;
+   }
+}
 int show_it() {
     listint_t *head;
 
@@ -79,5 +88,7 @@ int show_it() {
     add_nodeint_end(&head, 402);
     add_nodeint_end(&head, 1024);
     print_listint(head);
-    return 0;
+    free_listint(head);
+    head = NULL;
+    return (0);
 }

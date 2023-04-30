@@ -120,8 +120,8 @@ void free_list(list_t *head){
     while(head){
         t = head->next;
         free(head->str);
-        free(t);
         head=t;
+        free(t);
     }
 }
 int test_me() {
