@@ -1,19 +1,28 @@
 #include "lists.h"
 #include <stdio.h>
 
+
+// Task 1
 size_t print_listint(const listint_t *h){
     size_t num_of_nodes = 0;
 
 
-    while (h !=NULL){
+    for (; h !=NULL; num_of_nodes++, h = h->next){
         printf("%d\n", h->n);
-        num_of_nodes +=1;
-        h = h->next;
     }
 
     return num_of_nodes;
 }
 
+// Task 2
+size_t listint_len(const listint_t *h){
+    size_t num_el = 0;
+
+    for (; h !=NULL; num_el +=1){
+        h = h->next;
+    }
+    return num_el;
+}
 
 int show_it(){
     listint_t *head;
@@ -31,8 +40,9 @@ int show_it(){
     new->n = 9;
     new->next = head;
     head = new;
-    n = print_listint(head);
-    printf("-> %zu elements\n", n);
+    n = listint_len(head);
+    printf("-> %lu elements\n", n);
     free(new);
+    return (0);
     return 0;
 }
