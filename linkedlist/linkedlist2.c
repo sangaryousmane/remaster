@@ -48,8 +48,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n) {
 
     if (new_list == NULL) {
         return NULL;
-    }
-    else {
+    } else {
         new_list->n = n;
         new_list->next = NULL;
         if (*head == NULL) {
@@ -67,20 +66,20 @@ listint_t *add_nodeint_end(listint_t **head, const int n) {
 }
 
 // Task 5
-void free_listint(listint_t *head){
+void free_listint(listint_t *head) {
     listint_t *list;
 
-   for(; head !=NULL; list=head->next){
-       free(head);
-       head=list;
-   }
+    for (; head != NULL; list = head->next) {
+        free(head);
+        head = list;
+    }
 }
 
 // Task 6
-void free_listint2(listint_t **head){
+void free_listint2(listint_t **head) {
     listint_t *t;
 
-    if ((*head) !=NULL) {
+    if ((*head) != NULL) {
         for (; *head != NULL; t = (*head)->next) {
             free(*head);
             *head = t;
@@ -91,8 +90,27 @@ void free_listint2(listint_t **head){
     }
 
 }
+
+// Task 7
+int pop_listint(listint_t **head) {
+    int new_data = 0;
+    listint_t *temp_var = NULL;
+
+    if (*head == NULL) {
+        return 0;
+    }
+    else {
+        temp_var = *head;
+        new_data = temp_var->n;
+        *head = (*head)->next;
+        free(temp_var);
+        return new_data;
+    }
+}
+
 int show_it() {
     listint_t *head;
+    int n;
 
     head = NULL;
     add_nodeint_end(&head, 0);
@@ -103,6 +121,12 @@ int show_it() {
     add_nodeint_end(&head, 98);
     add_nodeint_end(&head, 402);
     add_nodeint_end(&head, 1024);
+    print_listint(head);
+    n = pop_listint(&head);
+    printf("- %d\n", n);
+    print_listint(head);
+    n = pop_listint(&head);
+    printf("- %d\n", n);
     print_listint(head);
     free_listint2(&head);
     printf("%p\n", (void *)head);
