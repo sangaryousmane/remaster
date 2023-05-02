@@ -77,18 +77,14 @@ void free_listint(listint_t *head) {
 
 // Task 6
 void free_listint2(listint_t **head) {
-    listint_t *t;
-
-    if ((*head) != NULL) {
-        for (; *head != NULL; t = (*head)->next) {
-            free(*head);
-            *head = t;
-        }
-        head = NULL;
-    } else {
+    listint_t *tmp;
+    if ((*head) == NULL)
         return;
+    for (listint_t *current = *head; current != NULL; current = tmp) {
+        tmp = current->next;
+        free(current);
     }
-
+    *head = NULL;
 }
 
 // Task 7
@@ -108,9 +104,24 @@ int pop_listint(listint_t **head) {
     }
 }
 
+// Task 11
+listint_t *reverse_listint(listint_t **head) {
+    listint_t *ahead, *tail;
+    listint_t *current;
+    if (head == NULL || *head == NULL)
+        return (NULL);
+    tail = NULL;
+    for (current = *head; current != NULL; current = ahead) {
+        ahead = current->next;
+        current->next = tail;
+        tail = current;
+    }
+    *head = tail;
+    return (*head);
+}
+
 int show_it() {
     listint_t *head;
-    int n;
 
     head = NULL;
     add_nodeint_end(&head, 0);
@@ -122,13 +133,8 @@ int show_it() {
     add_nodeint_end(&head, 402);
     add_nodeint_end(&head, 1024);
     print_listint(head);
-    n = pop_listint(&head);
-    printf("- %d\n", n);
-    print_listint(head);
-    n = pop_listint(&head);
-    printf("- %d\n", n);
+    reverse_listint(&head);
     print_listint(head);
     free_listint2(&head);
-    printf("%p\n", (void *)head);
     return (0);
 }
