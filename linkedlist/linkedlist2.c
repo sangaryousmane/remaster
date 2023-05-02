@@ -119,21 +119,70 @@ listint_t *reverse_listint(listint_t **head) {
     return (*head);
 }
 
+// Task 12
+size_t loop_once(const listint_t *head) {
+    const listint_t *slow, *fast;
+    size_t count = 1;
+    if (head == NULL || head->next == NULL)
+        return (0);
+    slow = head->next;
+    fast = (head->next)->next;
+    for (; fast; slow = slow->next, fast = (fast->next)->next) {
+        if (slow == fast) {
+            slow = head;
+            for (; slow != fast; count++, slow = slow->next, fast = fast->next)
+                ;
+            slow = slow->next;
+            for (; slow != fast; count++, slow = slow->next)
+                ;
+            return (count);
+        }
+    }
+    return (0);
+}
+
+size_t print_listint_safe(const listint_t *head) {
+    size_t count = 0, nodes = loop_once(head);
+    if (nodes == 0) {
+            while (head != NULL) {
+                printf("[%p] %d\n", (void *)head, head->n);
+                count++;
+                head = head->next;
+            }
+    } else {
+        while (count < nodes) {
+            printf("[%p] %d\n", (void *)head, head->n);
+            count++;
+            head = head->next;
+        }
+        printf("-> [%p] %d\n", (void *)head, head->n);
+    }
+    return (count);
+}
 int show_it() {
     listint_t *head;
+    listint_t *head2;
+    listint_t *node;
 
+    head2 = NULL;
+    add_nodeint(&head2, 0);
+    add_nodeint(&head2, 1);
+    add_nodeint(&head2, 2);
+    add_nodeint(&head2, 3);
+    add_nodeint(&head2, 4);
+    add_nodeint(&head2, 98);
+    add_nodeint(&head2, 402);
+    add_nodeint(&head2, 1024);
+    print_listint_safe(head2);
     head = NULL;
-    add_nodeint_end(&head, 0);
-    add_nodeint_end(&head, 1);
-    add_nodeint_end(&head, 2);
-    add_nodeint_end(&head, 3);
-    add_nodeint_end(&head, 4);
-    add_nodeint_end(&head, 98);
-    add_nodeint_end(&head, 402);
-    add_nodeint_end(&head, 1024);
-    print_listint(head);
-    reverse_listint(&head);
-    print_listint(head);
-    free_listint2(&head);
+    node = add_nodeint(&head, 0);
+    add_nodeint(&head, 1);
+    add_nodeint(&head, 2);
+    add_nodeint(&head, 3);
+    add_nodeint(&head, 4);
+    node->next = add_nodeint(&head, 98);
+    add_nodeint(&head, 402);
+    add_nodeint(&head, 1024);
+    print_listint_safe(head);
     return (0);
 }
