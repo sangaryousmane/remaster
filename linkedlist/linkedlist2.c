@@ -141,6 +141,29 @@ size_t loop_once(const listint_t *head) {
     return (0);
 }
 
+// Task 13
+size_t free_listint_safe(listint_t **head) {
+    listint_t *tmp = NULL, *current = *head;
+    size_t nodes = loop_once(*head), index = 0;
+    if (nodes == 0) {
+        while (head != NULL && *head != NULL) {
+            tmp = (*head)->next;
+            free(*head);
+            *head = tmp;
+            nodes++;
+        }
+    } else {
+        while (index < nodes) {
+            tmp = current->next;
+            free(current);
+            current = tmp;
+            index++;
+        }
+        *head = NULL;
+    }
+    head = NULL;
+    return nodes;
+}
 size_t print_listint_safe(const listint_t *head) {
     size_t count = 0, nodes = loop_once(head);
     if (nodes == 0) {
@@ -159,30 +182,134 @@ size_t print_listint_safe(const listint_t *head) {
     }
     return (count);
 }
+
+// Task 14
+listint_t *find_listint_loop(listint_t *head) {
+    listint_t *slow = head, *fast = head;
+    while (fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast) {
+            slow = head;
+            for (; slow != fast; slow = slow->next, fast = fast->next)
+                ;
+            return slow;
+        }
+    }
+    return NULL;
+}
+
+// Task 7
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index) {
+    unsigned int n = 0;
+    while (n < index && head != NULL) {
+        head = head->next;
+        n++;
+    }
+    return (head);
+}
+
+// Task 9
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n) {
+    listint_t *new, *t = *head;;
+
+    new = malloc(sizeof(listint_t));
+    if (!new)
+        return (NULL);
+    new->n = n;
+    if (!idx) {
+        new->next = t;
+        return *head = new, new;
+    }
+    while (--idx && t)
+        t = t->next;
+    if (!t)
+        return (free(new), NULL);
+    new->next = t->next;
+    return (t->next = new, new);
+}
+// Task 10
+int delete_nodeint_at_index(listint_t **head, unsigned int index){
+    int n = 0;
+    listint_t *list, *t=*head;
+
+    if (!t)
+        return (-1);
+
+    if (index == 0)
+    {
+        *head = (*head)->next;
+        free(t);
+        return (1);
+    }
+
+    for (n = 0; n < (index - 1); n++)
+    {
+        if (t->next == NULL)
+            return (-1);
+
+        t = t->next;
+    }
+
+    list = t->next;
+    t->next = list->next;
+    free(list);
+    return (1);
+}
 int show_it() {
     listint_t *head;
-    listint_t *head2;
-    listint_t *node;
 
-    head2 = NULL;
-    add_nodeint(&head2, 0);
-    add_nodeint(&head2, 1);
-    add_nodeint(&head2, 2);
-    add_nodeint(&head2, 3);
-    add_nodeint(&head2, 4);
-    add_nodeint(&head2, 98);
-    add_nodeint(&head2, 402);
-    add_nodeint(&head2, 1024);
-    print_listint_safe(head2);
     head = NULL;
-    node = add_nodeint(&head, 0);
-    add_nodeint(&head, 1);
-    add_nodeint(&head, 2);
-    add_nodeint(&head, 3);
-    add_nodeint(&head, 4);
-    node->next = add_nodeint(&head, 98);
-    add_nodeint(&head, 402);
-    add_nodeint(&head, 1024);
-    print_listint_safe(head);
+    add_nodeint_end(&head, 0);
+    add_nodeint_end(&head, 1);
+    add_nodeint_end(&head, 2);
+    add_nodeint_end(&head, 3);
+    add_nodeint_end(&head, 4);
+    add_nodeint_end(&head, 98);
+    add_nodeint_end(&head, 402);
+    add_nodeint_end(&head, 1024);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 5);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
     return (0);
 }
