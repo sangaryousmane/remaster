@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 
+// DEAF FINDER
 
 // Task 1
 size_t print_listint(const listint_t *h) {
@@ -30,14 +31,16 @@ listint_t *add_nodeint(listint_t **head, const int n) {
 
     new_list = malloc(sizeof(listint_t));
 
-    if (new_list != NULL) {
+    if (new_list == NULL) {
+        return NULL;
+    } else {
         new_list->n = n;
         new_list->next = (*head);
         (*head) = new_list;
         return new_list;
     }
-    return NULL;
 }
+
 
 // Task 4
 listint_t *add_nodeint_end(listint_t **head, const int n) {
@@ -48,7 +51,8 @@ listint_t *add_nodeint_end(listint_t **head, const int n) {
 
     if (new_list == NULL) {
         return NULL;
-    } else {
+    }
+    else {
         new_list->n = n;
         new_list->next = NULL;
         if (*head == NULL) {
@@ -87,14 +91,12 @@ void free_listint2(listint_t **head) {
     *head = NULL;
 }
 
-// Task 7
-int pop_listint(listint_t **head) {
-    int new_data = 0;
+// TODO: DAY 24, DELETE NODE IN A LIST
+int delete_node(listint_t **head) {
+    int new_data;
     listint_t *temp_var = NULL;
-
-    if (*head == NULL) {
+    if (!*head)
         return 0;
-    }
     else {
         temp_var = *head;
         new_data = temp_var->n;
@@ -130,11 +132,9 @@ size_t loop_once(const listint_t *head) {
     for (; fast; slow = slow->next, fast = (fast->next)->next) {
         if (slow == fast) {
             slow = head;
-            for (; slow != fast; count++, slow = slow->next, fast = fast->next)
-                ;
+            for (; slow != fast; count++, slow = slow->next, fast = fast->next);
             slow = slow->next;
-            for (; slow != fast; count++, slow = slow->next)
-                ;
+            for (; slow != fast; count++, slow = slow->next);
             return (count);
         }
     }
@@ -164,21 +164,22 @@ size_t free_listint_safe(listint_t **head) {
     head = NULL;
     return nodes;
 }
+
 size_t print_listint_safe(const listint_t *head) {
     size_t count = 0, nodes = loop_once(head);
     if (nodes == 0) {
-            while (head != NULL) {
-                printf("[%p] %d\n", (void *)head, head->n);
-                count++;
-                head = head->next;
-            }
-    } else {
-        while (count < nodes) {
-            printf("[%p] %d\n", (void *)head, head->n);
+        while (head != NULL) {
+            printf("[%p] %d\n", (void *) head, head->n);
             count++;
             head = head->next;
         }
-        printf("-> [%p] %d\n", (void *)head, head->n);
+    } else {
+        while (count < nodes) {
+            printf("[%p] %d\n", (void *) head, head->n);
+            count++;
+            head = head->next;
+        }
+        printf("-> [%p] %d\n", (void *) head, head->n);
     }
     return (count);
 }
@@ -191,8 +192,7 @@ listint_t *find_listint_loop(listint_t *head) {
         fast = fast->next->next;
         if (slow == fast) {
             slow = head;
-            for (; slow != fast; slow = slow->next, fast = fast->next)
-                ;
+            for (; slow != fast; slow = slow->next, fast = fast->next);
             return slow;
         }
     }
@@ -228,23 +228,22 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n) {
     new->next = t->next;
     return (t->next = new, new);
 }
+
 // Task 10
-int delete_nodeint_at_index(listint_t **head, unsigned int index){
+int delete_nodeint_at_index(listint_t **head, unsigned int index) {
     int n = 0;
-    listint_t *list, *t=*head;
+    listint_t *list, *t = *head;
 
     if (!t)
         return (-1);
 
-    if (index == 0)
-    {
+    if (index == 0) {
         *head = (*head)->next;
         free(t);
         return (1);
     }
 
-    for (n = 0; n < (index - 1); n++)
-    {
+    for (n = 0; n < (index - 1); n++) {
         if (t->next == NULL)
             return (-1);
 
@@ -256,60 +255,15 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index){
     free(list);
     return (1);
 }
+
 int show_it() {
     listint_t *head;
 
     head = NULL;
-    add_nodeint_end(&head, 0);
-    add_nodeint_end(&head, 1);
-    add_nodeint_end(&head, 2);
-    add_nodeint_end(&head, 3);
-    add_nodeint_end(&head, 4);
-    add_nodeint_end(&head, 98);
-    add_nodeint_end(&head, 402);
-    add_nodeint_end(&head, 1024);
+    add_nodeint(&head, 0);
+    add_nodeint(&head, 1);
+    add_nodeint(&head, 2);
     print_listint(head);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 5);
-    print_listint(head);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    print_listint(head);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    print_listint(head);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    print_listint(head);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    print_listint(head);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    print_listint(head);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    print_listint(head);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    printf("-----------------\n");
-    delete_nodeint_at_index(&head, 0);
-    print_listint(head);
+    delete_node( &head);
     return (0);
 }

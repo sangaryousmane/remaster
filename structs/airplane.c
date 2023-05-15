@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+
+// TODO: struct in C, Mimicking an Airplane
 struct airplane {
     char *model;
     int capacity;
@@ -7,7 +9,8 @@ struct airplane {
 };
 
 int show_airplane() {
-    struct airplane my_airplane = {"Boeing 747", 416, 0};
+    struct airplane my_airplane = {"Boeing 747",
+            416, 0};
 
     printf("Model: %s\n", my_airplane.model);
     printf("Capacity: %d\n", my_airplane.capacity);
