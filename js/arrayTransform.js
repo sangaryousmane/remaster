@@ -31,13 +31,25 @@ fn = function addTen(n){
 }
 
 
-const odd = n => n % 2 != 0;
+const odd = n => n % 2 !== 0;
 
 newArray = arr.filter(odd);
 
 const mixNum = n => n * 1.5;
-console.log(newArray.map(mixNum))
+// console.log(newArray.map(mixNum))
 
+
+const students = [
+    { name: 'Quincy', grade: 96 },
+    { name: 'Jason', grade: 84 },
+    { name: 'Alexis', grade: 100 },
+    { name: 'Sam', grade: 65 },
+    { name: 'Katie', grade: 90 }
+];
+
+const passed = students.filter(std => std.grade >= 70);
+
+console.log(passed)
 // Test
 // const result = map(arr, fn);
 // console.log(result)
