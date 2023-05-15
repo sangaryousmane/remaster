@@ -15,6 +15,7 @@ var filter = function (arr, fn) {
     return newArray;
 }
 
+
 var map = function (arr, fn){
     var newArray = [];
 
@@ -22,6 +23,17 @@ var map = function (arr, fn){
         newArray[i]=fn(arr[i], i);
     }
     return newArray;
+}
+
+// https://leetcode.com/problems/array-reduce-transformation/description/
+var reduce = function (nums, fn, init){
+    if (nums.length === 0) return init;
+
+    let value = init;
+    for(const n of nums){
+        value = fn(value, n);
+    }
+    return value;
 }
 
 arr = [1,3, 5, 10, 20, 30]
