@@ -1,4 +1,20 @@
 # ninja log v5
-7	913	7042308845842821	build.ninja	ff7141e71bd53ade
-3	901	7042304922792829	remaster.exe	6fc0d7c850c8a4ec
-0	809	7042304883785056	CMakeFiles/remaster.dir/main.c.obj	94066cf42f6345f
+9	543	7059117621806281	build.ninja	ff7141e71bd53ade
+108	746	7047744624802612	CMakeFiles/remaster.dir/remaster/structs/House.c.obj	531f48acd509af28
+746	1161	7058592924612331	remaster.exe	b01dfb9a89cc6c07
+6	744	7058592920551027	CMakeFiles/remaster.dir/main.c.obj	94066cf42f6345f
+3	177	7043865231728579	CMakeFiles/remaster.dir/remaster/structs/animal.c.obj	240f8c49e56425d5
+41	459	7052305609455905	CMakeFiles/remaster.dir/remaster/linkedlist/LinkedList.c.obj	84c029492c076e17
+112	1016	7054036419169785	CMakeFiles/remaster.dir/remaster/linkedlist/linkedlist2.c.obj	38085aa663be3bf9
+26	215	7045556104114860	CMakeFiles/remaster.dir/remaster/structs/Car.c.obj	f8fe87f7b912104e
+44	608	7046484155741528	CMakeFiles/remaster.dir/remaster/linkedlist/tasks.c.obj	29dd81e2b4cbb4a8
+4	235	7045556104337556	CMakeFiles/remaster.dir/remaster/structs/tasks.c.obj	f27b994e8eae8838
+3	160	7052320584733182	CMakeFiles/remaster.dir/remaster/file-handling/handle.c.obj	a9d0f4a17208dd2f
+4	934	7049834917733919	CMakeFiles/remaster.dir/remaster/structs/airplane.c.obj	b4b2ebd68c18fb0a
+870	1146	7051711878827678	CMakeFiles/remaster.dir/remaster/bit-manipulation/tasks.c.obj	1226815e6d49429e
+8	1096	7054036540811832	CMakeFiles/remaster.dir/remaster/file-handling/tasks.c.obj	141188cfab108db9
+38	1093	7054036540811832	CMakeFiles/remaster.dir/remaster/file-handling/elf_file.c.obj	afe8d4fc9a546f95
+5	343	7057829712770892	CMakeFiles/remaster.dir/remaster/shell/random.c.obj	2fcd9f5be0acb7c7
+39	875	7059124376685308	CMakeFiles/remaster.dir/remaster/recursion/basics.c.obj	9375c2035c33d155
+8	878	7059124376685308	CMakeFiles/remaster.dir/main.c.obj	94066cf42f6345f
+879	1334	7059124381164393	remaster.exe	3008e6631b09d7af

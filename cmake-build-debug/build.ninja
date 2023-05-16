@@ -55,11 +55,89 @@ build CMakeFiles/remaster.dir/main.c.obj: C_COMPILER__remaster_Debug C$:/Users/s
   OBJECT_DIR = CMakeFiles\remaster.dir
   OBJECT_FILE_DIR = CMakeFiles\remaster.dir
 
-build CMakeFiles/remaster.dir/remaster/animal.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/animal.c || cmake_object_order_depends_target_remaster
-  DEP_FILE = CMakeFiles\remaster.dir\remaster\animal.c.obj.d
+build CMakeFiles/remaster.dir/remaster/structs/animal.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/structs/animal.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\structs\animal.c.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\remaster.dir
-  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\structs
+
+build CMakeFiles/remaster.dir/remaster/linkedlist/tasks.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/linkedlist/tasks.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\linkedlist\tasks.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\linkedlist
+
+build CMakeFiles/remaster.dir/remaster/linkedlist/LinkedList.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/linkedlist/LinkedList.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\linkedlist\LinkedList.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\linkedlist
+
+build CMakeFiles/remaster.dir/remaster/linkedlist/linkedlist2.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/linkedlist/linkedlist2.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\linkedlist\linkedlist2.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\linkedlist
+
+build CMakeFiles/remaster.dir/remaster/structs/Car.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/structs/Car.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\structs\Car.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\structs
+
+build CMakeFiles/remaster.dir/remaster/structs/tasks.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/structs/tasks.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\structs\tasks.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\structs
+
+build CMakeFiles/remaster.dir/remaster/structs/House.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/structs/House.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\structs\House.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\structs
+
+build CMakeFiles/remaster.dir/remaster/structs/airplane.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/structs/airplane.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\structs\airplane.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\structs
+
+build CMakeFiles/remaster.dir/remaster/bit-manipulation/tasks.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/bit-manipulation/tasks.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\bit-manipulation\tasks.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\bit-manipulation
+
+build CMakeFiles/remaster.dir/remaster/file-handling/handle.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/file-handling/handle.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\file-handling\handle.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\file-handling
+
+build CMakeFiles/remaster.dir/remaster/file-handling/tasks.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/file-handling/tasks.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\file-handling\tasks.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\file-handling
+
+build CMakeFiles/remaster.dir/remaster/file-handling/elf_file.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/file-handling/elf_file.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\file-handling\elf_file.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\file-handling
+
+build CMakeFiles/remaster.dir/remaster/shell/random.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/shell/random.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\shell\random.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\shell
+
+build CMakeFiles/remaster.dir/remaster/recursion/basics.c.obj: C_COMPILER__remaster_Debug C$:/Users/sanga/Documents/remaster/remaster/recursion/basics.c || cmake_object_order_depends_target_remaster
+  DEP_FILE = CMakeFiles\remaster.dir\remaster\recursion\basics.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\remaster.dir
+  OBJECT_FILE_DIR = CMakeFiles\remaster.dir\remaster\recursion
 
 
 # =============================================================================
@@ -69,7 +147,7 @@ build CMakeFiles/remaster.dir/remaster/animal.c.obj: C_COMPILER__remaster_Debug 
 #############################################
 # Link the executable remaster.exe
 
-build remaster.exe: C_EXECUTABLE_LINKER__remaster_Debug CMakeFiles/remaster.dir/main.c.obj CMakeFiles/remaster.dir/remaster/animal.c.obj
+build remaster.exe: C_EXECUTABLE_LINKER__remaster_Debug CMakeFiles/remaster.dir/main.c.obj CMakeFiles/remaster.dir/remaster/structs/animal.c.obj CMakeFiles/remaster.dir/remaster/linkedlist/tasks.c.obj CMakeFiles/remaster.dir/remaster/linkedlist/LinkedList.c.obj CMakeFiles/remaster.dir/remaster/linkedlist/linkedlist2.c.obj CMakeFiles/remaster.dir/remaster/structs/Car.c.obj CMakeFiles/remaster.dir/remaster/structs/tasks.c.obj CMakeFiles/remaster.dir/remaster/structs/House.c.obj CMakeFiles/remaster.dir/remaster/structs/airplane.c.obj CMakeFiles/remaster.dir/remaster/bit-manipulation/tasks.c.obj CMakeFiles/remaster.dir/remaster/file-handling/handle.c.obj CMakeFiles/remaster.dir/remaster/file-handling/tasks.c.obj CMakeFiles/remaster.dir/remaster/file-handling/elf_file.c.obj CMakeFiles/remaster.dir/remaster/shell/random.c.obj CMakeFiles/remaster.dir/remaster/recursion/basics.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\remaster.dir
