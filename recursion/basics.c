@@ -43,3 +43,16 @@ int factorial(int n){
 
     return n * factorial(n - 1);
 }
+
+int power_recur(int base, int exponent){
+
+    if (exponent < 0) {
+        return -1;
+    }
+    else if (exponent == 0){
+        return 1;
+    }
+    else {
+        return base * power_recur(base, exponent - 1);
+    }
+}
