@@ -23,8 +23,18 @@ entry.set("Francis", 40);
 entry.set("Jacob", 27);
 
 if (entry.size >= 3){
-    console.log(entry.get("Jacob"))
+    if (entry.has("Jacob")){
+        entry.delete("Jacob")
+        entry.get("Ousmane") + 1;
+    }
+    console.log(entry.entries())
+    entry.clear();
 }
+
 else {
     throw new Error("Sorry, size if lower than expected");
 }
+
+console.log(entry.size);
+entry.set("Rexford", 20);
+console.log(entry.entries())
