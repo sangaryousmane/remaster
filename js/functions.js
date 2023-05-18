@@ -12,7 +12,19 @@ let fibonacci = (n, memo = {}) => {
     return memo[n];
 }
 
-let n = 8;
-console.log(" ", fibonacci(n));
+// let n = 8;
+// console.log(" ", fibonacci(n));
 
 // Play with Maps in Js
+const entry = new Map();
+
+entry.set("Ousmane", 23);
+entry.set("Francis", 40);
+entry.set("Jacob", 27);
+
+if (entry.size >= 3){
+    console.log(entry.get("Jacob"))
+}
+else {
+    throw new Error("Sorry, size if lower than expected");
+}

@@ -137,3 +137,31 @@ char *_strcat(char *dest, const char *src){
     return dest;
 }
 
+char *_strtok(char *str, const char *delim) {
+    static char *last_token = NULL;
+    char *token;
+    int i, j;
+
+    if (str != NULL) {
+        last_token = str;
+    }
+
+    if (last_token == NULL) {
+        return NULL;
+    }
+
+    token = last_token;
+
+    for (i = 0; token[i] != '\0'; i++) {
+        for (j = 0; delim[j] != '\0'; j++) {
+            if (token[i] == delim[j]) {
+                token[i] = '\0';
+                last_token = &token[i+1];
+                return token;
+            }
+        }
+    }
+
+    last_token = NULL;
+    return token;
+}
