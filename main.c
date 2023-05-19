@@ -6,7 +6,9 @@
 pid_t check(pid_t pid) {
     return (pid > 0) ? 1 : 0;
 }
-
+int _putchar(int c){
+    return write(1, &c, 1);
+}
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
@@ -48,17 +50,37 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream) {
     (*lineptr)[i] = '\0';
     return i == 0 && c == EOF ? -1 : i;
 }
-int sumOfNaturalNums(int n);
-int main(int argc, char *argv[]) {
 
-    (void) argc; (void) argv;
-    int n;
-    printf("Enter a number: ");
-    scanf("%d", &n);
+char *_strtok(char *str, const char *delim);
 
-    printf("Some is = %d\n", sumOfNaturalNums(n));
-    return 0;
+int main(int argc, char *argv[], char **envp) {
+
+    int i = 0;
+    while (envp[i] != NULL) {
+        char *str = envp[i];
+        while (*str != '\0') {
+            _putchar(*str);
+            str++;
+        }
+        _putchar('\n');
+        i++;
+    }
+//    int i=0;
+//    while (envp[i] !=NULL){
+//        printf("%d: %s\n", i, envp[i]);
+//        i++;
+//    }
+//    return 0;
 }
+//    char str[] = "This is a test string";
+//    char *token;
+//
+//    token =_strtok(str, " ");
+//    while (token != NULL) {
+//        printf("%s\n", token);
+//        token = _strtok(NULL, " ");
+//    }
+
 
 void read_getline() {
     char *line = NULL;
