@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int _putchar(int c) {
-    return write(1, &c, 1);
-}
+//int _putchar(int c) {
+//    return write(1, &c, 1);
+//}
 
 // https://chat.whatsapp.com/JQXjqJ7S3apErm9dFuyoQV:
 // Write a function that converts a binary number to an unsigned int.
