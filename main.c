@@ -62,7 +62,7 @@ int main(int argc, char *argv[], char **envp) {
             _putchar(*str);
             str++;
         }
-        _putchar('\n');
+        _putchar('qn');
         i++;
     }
 //    int i=0;
