@@ -40,20 +40,27 @@ function accessMap() {
     console.log(entry.entries()); // //  // //
 }
 
-
-entry.set("Jack", 25);
-let jack = entry.get("Jack");
-
-if (entry.has(jack)){
-    entry.delete(jack)
-    display();
-
-}
-else {
-    entry.set("Jack")
-    display();
-}
-
 const display = () =>{
     console.log(entry.entries());
+}
+
+entry.set("Jack", 25);
+
+let jack = entry.get("Jack");
+
+if (entry.has(jack)) {
+    entry.delete(jack);
+}
+else {
+    entry.set("Krishna", 30)
+}
+
+let values = entry.values();
+
+for (const i of values){
+
+    if (i >= 24)
+    {
+        console.log(i)
+    }
 }
