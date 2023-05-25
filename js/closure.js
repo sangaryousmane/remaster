@@ -1,3 +1,4 @@
+
 // TODO: closures in JS
 function greet(name) {
     let hi = `Hi there ${name}`;

@@ -18,23 +18,42 @@ let fibonacci = (n, memo = {}) => {
 // Play with Maps in Js
 const entry = new Map();
 
+// name and age
 entry.set("Ousmane", 23);
 entry.set("Francis", 40);
 entry.set("Jacob", 27);
 
-if (entry.size >= 3){
-    if (entry.has("Jacob")){
-        entry.delete("Jacob")
-        entry.get("Ousmane") + 1;
+function accessMap() {
+    if (entry.size >= 3) {
+        if (entry.has("Jacob")) {
+            entry.delete("Jacob")
+            entry.get("Ousmane") + 1;
+        }
+        console.log(entry.entries())
+        entry.clear();
+    } else {
+        throw new Error("Sorry, size if lower than expected");
     }
-    console.log(entry.entries())
-    entry.clear();
+
+    console.log(entry.size);   // // // //
+    entry.set("Rexford", 20); // // // //
+    console.log(entry.entries()); // //  // //
 }
 
+
+entry.set("Jack", 25);
+let jack = entry.get("Jack");
+
+if (entry.has(jack)){
+    entry.delete(jack)
+    display();
+
+}
 else {
-    throw new Error("Sorry, size if lower than expected");
+    entry.set("Jack")
+    display();
 }
 
-console.log(entry.size);
-entry.set("Rexford", 20);
-console.log(entry.entries())
+const display = () =>{
+    console.log(entry.entries());
+}

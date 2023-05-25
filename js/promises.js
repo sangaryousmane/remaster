@@ -34,7 +34,7 @@ let codeMore = new Promise((resolve, reject) =>{
 p.then((message) =>{
     console.log(`Called successfully: ${message}`)
 }).catch((message) =>{
-    console.log(`Unsuccessful: ${message}`);
+    console.log(`Error! Unsuccessful: ${message}`);
 })
 
 // second promise
@@ -61,8 +61,6 @@ codeMore.then((m) =>{
 //     console.log(messages);
 // })
 
-Promise.race([
-    codeMore, p
-]).then((message) =>{
+Promise.race([codeMore, p]).then((message) =>{
     console.log(message)
 })
