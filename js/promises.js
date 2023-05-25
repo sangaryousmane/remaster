@@ -55,8 +55,14 @@ codeMore.then((m) =>{
 // example();
 
 
-Promise.all([
+// Promise.all([
+//     codeMore, p
+// ]).then((messages) =>{
+//     console.log(messages);
+// })
+
+Promise.race([
     codeMore, p
-]).then((messages) =>{
-    console.log(messages);
+]).then((message) =>{
+    console.log(message)
 })
