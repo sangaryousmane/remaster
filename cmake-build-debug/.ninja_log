@@ -53,3 +53,6 @@
 4	723	7061696334140432	CMakeFiles/remaster.dir/main.c.obj	94066cf42f6345f
 42	727	7061696334140432	CMakeFiles/remaster.dir/remaster/bit-manipulation/tasks.c.obj	1226815e6d49429e
 727	1214	7061696338709856	remaster.exe	3008e6631b09d7af
+103	832	7073405378763408	CMakeFiles/remaster.dir/remaster/shell/random.c.obj	2fcd9f5be0acb7c7
+6	834	7073405378763408	CMakeFiles/remaster.dir/main.c.obj	94066cf42f6345f
+835	1375	7073405384117827	remaster.exe	3008e6631b09d7af

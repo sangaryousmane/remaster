@@ -2,6 +2,9 @@
 #include <sys/types.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <time.h>
+#include <unistd.h>
 
 pid_t check(pid_t pid) {
     return (pid > 0) ? 1 : 0;
@@ -53,25 +56,35 @@ ssize_t my_getline(char **lineptr, size_t *n, FILE *stream) {
 
 char *_strtok(char *str, const char *delim);
 
-int main(int argc, char *argv[], char **envp) {
+// TODO: reminder to code
+void getCodeReminder(time_t *now, struct tm *coding_time) {
+    struct tm *current_time;
+    while (1) {
+        time(now);
+        current_time = localtime(now);
 
-    int i = 0;
-    while (envp[i] != NULL) {
-        char *str = envp[i];
-        while (*str != '\0') {
-            _putchar(*str);
-            str++;
+        //TODO: Check if it's time for coding
+        double diff = difftime(mktime(coding_time), (*now));
+        if (diff <= 0) {
+            printf("Get ready! It's time for coding!\n");
         }
-        _putchar('qn');
-        i++;
+        //TODO: Wait for 30 seconds before checking the time again
+        sleep(30);
     }
-//    int i=0;
-//    while (envp[i] !=NULL){
-//        printf("%d: %s\n", i, envp[i]);
-//        i++;
-//    }
-//    return 0;
 }
+
+int main(void) {
+    time_t now;
+    struct tm *current_time;
+    struct tm coding_time = {0, 0, 9,
+            0, 0, 0,0, 0, 0};
+
+    // TODO: invoke the implementation function
+    getCodeReminder(&now, &coding_time);
+}
+
+
+
 //    char str[] = "This is a test string";
 //    char *token;
 //
